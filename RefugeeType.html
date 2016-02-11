@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+<head>
+    <!-- jQuery from CDN -->
+<script src="lib/jquery.min.js"></script>
+      <script src="js/jribbble.js"></script>
+      <script src="js/bootstrap.js"></script>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    
+    <title>Global Refugee Analysis </title>
+    
+    <!-- Bootstrap + Font Awesome + Main CSS -->
+     <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./css/d3.slider.css" media="screen" /> 
+    <!-- customize this file if needed -->
+   <link href="css/main.css" rel="stylesheet">
+    <script type="text/javascript" src="./lib/d3.v3.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./lib/topojson.min.js"></script>
+    <script type="text/javascript" src="./lib/datamaps.world.min.js"></script>
+    <script src="./lib/d3.slider.js"></script>
+    <style type="text/css">
+     #chart {                                                          /* NEW */
+        height: 500px;                                                  /* NEW */
+        position: relative;                                             /* NEW */
+        width: 350px;                                                   /* NEW */
+      }                                                                 /* NEW */
+      .tooltip {                                                        /* NEW */
+        background: black;                                               /* NEW */
+        box-shadow: 0 0 5px #999999;                                    /* NEW */
+        color: white;                                                    /* NEW */
+        display: none;                                                  /* NEW */
+        font-size: 12px;                                                /* NEW */
+        left: 300px;                                                    /* NEW */
+        padding: 10px;                                                  /* NEW */
+        position: absolute;                                             /* NEW */
+        text-align: center;                                             /* NEW */
+        top: 120px;                                                      /* NEW */
+        width: 80px;                                                    /* NEW */
+        z-index: 0;                                                    /* NEW */
+      }                                                                 /* NEW */
+      .legend {
+        font-size: 12px;
+      }
+      .rect {
+        stroke-width: 2;
+      }
+      .axis {
+  font: 12px sans-serif;
+}
+ 
+}
+    </style>
+       <style type="text/css">
+   .box {
+  font: 10px sans-serif;
+}
+
+.box line,
+.box rect,
+.box circle {
+  fill: blue;
+  stroke: #000;
+  stroke-width: 1px;
+}
+
+.box .center {
+  stroke-dasharray: 3,3;
+}
+
+.box .outlier {
+  fill: none;
+  stroke: #000;
+}
+
+.axis {
+  font: 12px sans-serif;
+}
+ 
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+ 
+.x.axis path { 
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+    </style>
+     
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <header>
+                <div class="row">
+                    <div class="navbar">
+                        <div class="navbar-header">
+                            <button class="navbar-toggle collapsed" data-target=".navbar-collapse" data-toggle="collapse" type="button"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button> <a class="navbar-brand" href="home.html">Global Refugee Analysis</a>
+                        </div>
+                        <div class="collapse navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="RefugeeType.html">Refugee Types</a></li>
+                                <li><a href="RefugeeDistribution.html">Refugee Distribution</a></li>
+                                <li><a href="RefugeeMovements.html">Refugee Movements</a></li>
+                            </ul>                         
+                        </div><!-- /.nav-collapse -->
+                    </div><!-- /.navbar -->
+                </div>
+            </header>        
+        </div>
+         <div class="container">  
+            <div id="pieWithsilder" style="float: left">   
+            <div id="piechart" style="position:relative; width: 450px; height: 380px;"></div><br>
+            <div id="slider" style="position:relative; width:470px;height:100px;"></div>
+            </div> 
+            <div id="lineChart" style="float:right; position: relative; width: 700px; height: 450px;"></div>
+
+        </div>
+        <div class="container">
+              <svg id="boxplot" width="2000" height="1500"></svg>                   
+        </div>
+
+    </div>
+
+<script type="text/javascript" src="./data/total.js"></script>
+<script type="text/javascript" src="./data/pieData.js"></script>
+<script type="text/javascript" src="./js/pieChart.js"></script>
+<script type="text/javascript" src="./js/updatePie.js"></script>
+<script src="./js/highcharts.js"></script>
+<script type="text/javascript" src="./js/lineChart.js"></script>
+<script type="text/javascript" src="./js/box.js"></script>
+
+  <script type="text/javascript" src="./js/slider.js"></script>
+</body>
+</html>
